@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--BgColor);
+  color: var(--Accent);
+  font-family: Russo One;
+}
+@font-face {
+  font-family: Russo One;
+  src: url('./fonts/RussoOne-Regular.ttf');
+}
