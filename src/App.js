@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TsParticules from './components/TsParticles';
 import SwithTheme from './components/SwithTheme';
+import { ThemeProvider } from './contexts/context';
 import './App.css';
 
 function App() {
@@ -21,10 +22,12 @@ function App() {
     document.querySelector('.cube').style.webkitTransform = 'rotateY(-90deg)';
   }
   return (
-    <>
+    <ThemeProvider>
       <div id="mobile-portrait">
         <div id="theme-container">
-          <SwithTheme />
+          <span>
+            <SwithTheme />
+          </span>
         </div>
         <div className="scene">
           <div className="cube">
@@ -84,7 +87,7 @@ function App() {
         <TsParticules />
       </div>
       <div id="landscape"></div>
-    </>
+    </ThemeProvider>
   );
 }
 

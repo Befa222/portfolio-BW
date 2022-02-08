@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Particles from 'react-tsparticles';
+import { useTheme } from '../contexts/context';
 
 export default function TsParticles() {
-  const [theme, setTheme] = useState();
+  const { switchParticules } = useTheme();
   return (
     <div>
       <Particles
@@ -39,13 +40,13 @@ export default function TsParticles() {
           },
           particles: {
             color: {
-              value: '#ffffff',
+              value: switchParticules,
             },
             links: {
-              color: '#ffffff',
+              color: switchParticules,
               distance: 150,
               enable: true,
-              opacity: 0.5,
+              opacity: 0.7,
               width: 1,
             },
             collisions: {
