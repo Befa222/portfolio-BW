@@ -25,9 +25,7 @@ function App() {
     <ThemeProvider>
       <div id="mobile-portrait">
         <div id="theme-container">
-          <span>
-            <SwithTheme />
-          </span>
+          <SwithTheme />
         </div>
         <div className="scene">
           <div className="cube">
@@ -41,28 +39,41 @@ function App() {
               onClick={() => setProjects(true)}
               className="cube-face face-right"
             >
-              <h1>Projects</h1>
+              <h1 id="projects-text1">Projects</h1>
+              <h1 id="projects-text2">Projects</h1>
+              <h1 id="projects-text3">Projects</h1>
+              <h1 id="projects-text4">Projects</h1>
+              <h1 id="projects-text5">Projects</h1>
+              <h1 id="projects-text6">Projects</h1>
+              <h3 className="click">[ Click ]</h3>
             </div>
             <div onClick={() => setAbout(true)} className="cube-face face-left">
               <h1 id="about-text1">About </h1>
               <h1 id="about-text2">Me</h1>
-              <h3 id="about-click">[ Click ]</h3>
+              <h3 className="click">[ Click ]</h3>
             </div>
             <div className="cube-face face-top">
               <h1>Top</h1>
             </div>
             <div className="cube-face face-bottom">
-              <h1>Contact Me</h1>
+              <h1 id="contact-text">Contact Me</h1>
+              <h3 className="click">[ Click ]</h3>
             </div>
           </div>
         </div>
-        {about && <section id="about-me-section"></section>}
+        {about && (
+          <section id="about-me-section">
+            <div id="about-container">
+              <button onClick={() => setAbout(false)}>Back</button>
+            </div>
+          </section>
+        )}
         {projects && (
-          <div className="projects">
-            <button onClick={() => setProjects(false)}>
-              <h1>Back</h1>
-            </button>
-          </div>
+          <section id="projects-section">
+            <div id="projects-container">
+              <button onClick={() => setProjects(false)}>Back</button>
+            </div>
+          </section>
         )}
         <div id="controls-container">
           <div id="about-button-container">
