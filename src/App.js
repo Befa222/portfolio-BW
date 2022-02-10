@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import TsParticules from './components/TsParticles';
 import SwithTheme from './components/SwithTheme';
 import { ThemeProvider } from './contexts/context';
+import p1 from './images/gameMain.png';
+import p2 from './images/pikaMobile1.png';
+import portfolio3d from './video/portfolio3d.mp4';
+import p4 from './images/weather.jpg';
 import './App.css';
 
 function App() {
@@ -55,23 +59,120 @@ function App() {
             <div className="cube-face face-top">
               <h1>Top</h1>
             </div>
-            <div className="cube-face face-bottom">
+            <div
+              onClick={() => setContact(true)}
+              className="cube-face face-bottom"
+            >
               <h1 id="contact-text">Contact Me</h1>
               <h3 className="click">[ Click ]</h3>
             </div>
           </div>
         </div>
         {about && (
-          <section id="about-me-section">
-            <div id="about-container">
-              <button onClick={() => setAbout(false)}>Back</button>
+          <section id="about-section">
+            <div id="about-container1">
+              <div id="about-container1-text">
+                <p>
+                  I'm a French front-end developer who spent 14 years in London.
+                </p>
+                <p>
+                  I like anything creative and fell in love with Css and React.
+                  I love building projects from sratch and avoid the use of
+                  package as much as possible.
+                </p>
+              </div>
+              <h1 id="about-title1">About</h1>
+            </div>
+            <div id="about-container2">
+              <h1 id="about-title2">Me</h1>
+              <div id="about-container2-text">
+                <h1>Skills :</h1>
+                <p>
+                  Html, CSS, React, Javascript, Keyframes animation, React
+                  Context, React Router, Hooks...
+                </p>
+              </div>
+              <button id="close-button1" onClick={() => setAbout(false)}>
+                X
+              </button>
             </div>
           </section>
         )}
         {projects && (
           <section id="projects-section">
             <div id="projects-container">
-              <button onClick={() => setProjects(false)}>Back</button>
+              <h1>Projects: click for details</h1>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={p1} alt="game" />
+                  </div>
+                  <div className="flip-card-back">
+                    <h1>John Doe</h1>
+                  </div>
+                </div>
+              </div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={p2} alt="food-app" />
+                  </div>
+                  <div className="flip-card-back">
+                    <h1>John Doe</h1>
+                  </div>
+                </div>
+              </div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <video
+                      autoPlay={true}
+                      muted={true}
+                      loop={true}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                      }}
+                    >
+                      <source src={portfolio3d} type="video/mp4" />
+                    </video>
+                  </div>
+                  <div className="flip-card-back">
+                    <h1>John Doe</h1>
+                  </div>
+                </div>
+              </div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={p4} alt="weather app" />
+                  </div>
+                  <div className="flip-card-back">
+                    <h1>John Doe</h1>
+                  </div>
+                </div>
+              </div>
+              <button
+                id="close-button-projects"
+                onClick={() => setProjects(false)}
+              >
+                X
+              </button>
+            </div>
+          </section>
+        )}
+        {contact && (
+          <section id="contact-section">
+            <div id="contact-container">
+              <div id="contact-container-title">
+                <h1 id="contact-container-title-text">Contact me</h1>
+              </div>
+              <div id="form-container"></div>
+              <div id="links-container"></div>
+              <button id="close-button2" onClick={() => setContact(false)}>
+                X
+              </button>
             </div>
           </section>
         )}
@@ -97,7 +198,6 @@ function App() {
         </div>
         <TsParticules />
       </div>
-      <div id="landscape"></div>
     </ThemeProvider>
   );
 }
