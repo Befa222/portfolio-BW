@@ -84,7 +84,7 @@
   transform-style: preserve-3d;
 }
 .name {
-  font-size: 8vw;
+  font-size: clamp(2rem, 7.5vw, 3rem);
   opacity: 0;
   animation: nameOpacity 2s ease-in forwards;
   animation-delay: 0.5s;
@@ -92,7 +92,7 @@
 #title {
   position: relative;
   top: 5vw;
-  font-size: 5vw;
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
   opacity: 0;
   animation: nameOpacity 2s ease-in forwards;
   animation-delay: 1s;
@@ -102,14 +102,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 5vw;
+  font-size: clamp(1rem, 5vw, 2rem);
   transform: translate(-50%, -50%);
 }
 #about-text1 {
   position: absolute;
   left: 30%;
   top: 0;
-  font-size: 7vw;
+  font-size: clamp(1.2rem, 7vw, 2rem);
   animation: about-text 10s linear infinite;
   animation-delay: 0.85s;
 }
@@ -117,7 +117,7 @@
   position: absolute;
   left: 47%;
   top: 0;
-  font-size: 7vw;
+  font-size: clamp(1.2rem, 7vw, 2rem);
   animation: me-text 10s linear infinite;
 }
 #projects-text1 {
@@ -173,7 +173,7 @@
   position: absolute;
   top: 0%;
   left: 0%;
-  font-size: 6vw;
+  font-size: clamp(1rem, 6vw, 2rem);
   animation: contactText 5s linear infinite;
 }
 
@@ -243,6 +243,9 @@
   animation: nameOpacity 0.25s linear forwards;
   animation-delay: 1.7s;
 }
+#project-container-title {
+  font-size: clamp(1.2rem, 6vw, 2.2rem);
+}
 .flip-card {
   background-color: transparent;
   width: 40vh;
@@ -253,7 +256,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
@@ -282,9 +284,19 @@ img {
   max-height: 100%;
 }
 .flip-card-back {
-  background-color: #2980b9;
-  color: white;
+  padding: 2vw;
+  font-size: clamp(0.35rem, 4.65vw, 1.6rem);
+  background-color: var(--Accent);
+  color: var(--BgColor);
   transform: rotateY(180deg);
+}
+.project-name {
+  font-size: clamp(1rem, 6vw, 3rem);
+  text-align: center;
+}
+.project-details {
+  list-style: none;
+  line-height: normal;
 }
 #about-container1 {
   position: absolute;
@@ -308,7 +320,7 @@ img {
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  font-size: 12vw;
+  font-size: clamp(2.5rem, 12vw, 3.5rem);
   top: 88%;
   color: var(--BgColor);
 }
@@ -316,7 +328,7 @@ img {
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  font-size: 12vw;
+  font-size: clamp(2.5rem, 12vw, 3.5rem);
   top: 0%;
   color: var(--Accent);
 }
@@ -327,8 +339,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 5vw;
-  font-size: 4.5vw;
+  padding: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(1rem, 4vw, 1.5rem);
 }
 #about-container1-text {
   border: 2px solid var(--BgColor);
@@ -369,16 +381,59 @@ img {
   width: 70%;
   right: 7.5%;
   height: 55vh;
+  background-color: var(--BgColor);
   border: 2px solid var(--BgColor);
+  border-radius: 3vw;
+}
+form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.form-input-field {
+  text-align: center;
+  height: 8%;
+  background-color: var(--Accent);
+  color: var(--BgColor);
+  border: none;
+  border-radius: 2vw;
+}
+textarea {
+  width: 80%;
+  height: 20%;
+  background-color: var(--Accent);
+  color: var(--BgColor);
+  padding: 1vw;
+  border: none;
+  border-radius: 2vw;
+}
+#send-button {
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-family: Russo One;
+  padding: clamp(0.2rem, 2vw, 0.5rem);
+  color: var(--BgColor);
+  background-color: var(--Accent);
+  border: none;
+  border-radius: 2vw;
 }
 #links-container {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   top: 70%;
   width: 70%;
   right: 7.5%;
   height: 15vh;
+  background-color: #131313;
   border: 2px solid var(--BgColor);
+  border-radius: 3vw;
 }
+
 #close-button1,
 #close-button2 {
   position: absolute;
@@ -732,8 +787,85 @@ img {
     transform: translateX(0%);
   }
 }
+@media screen and (orientation: portrait) and (min-width: 500px) {
+  .scene {
+    top: 25vh;
+    left: 30vw;
+    width: 40vw;
+    height: 40vw;
+  }
+  .cube-face {
+    width: 40vw;
+    height: 40vw;
+  }
+  .face-front {
+    transform: rotateY(0deg) translateZ(20vw);
+  }
+  .face-right {
+    transform: rotateY(90deg) translateZ(20vw);
+  }
+  .face-back {
+    transform: rotateY(180deg) translateZ(20vw);
+  }
+  .face-left {
+    transform: rotateY(-90deg) translateZ(20vw);
+  }
+  .face-top {
+    transform: rotateX(90deg) translateZ(20vw);
+  }
+  .face-bottom {
+    transform: rotateX(-90deg) translateZ(20vw);
+  }
+}
 @media screen and (orientation: landscape) {
   .scene {
-    perspective: 3000px;
+    top: 25vh;
+    left: 40vw;
+    width: 20vw;
+    height: 20vw;
+    perspective: 5000px;
+  }
+  .cube-face {
+    width: 20vw;
+    height: 20vw;
+  }
+  #switch-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 5vw;
+    height: 35%;
+    border: 2px solid var(--Accent);
+    background-color: var(--BgColor);
+    border-radius: 5vw;
+  }
+  .switch {
+    width: 2vw;
+    height: 2vw;
+    background-color: var(--Accent);
+    border-radius: 50%;
+    transition: transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+  }
+
+  #controls-container {
+    bottom: 2vw;
+    height: 10vh;
+  }
+  #contact-main-button-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #projects-button,
+  #contact-button,
+  #about-button,
+  #main-button {
+    font-size: 2vw;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    opacity: 0;
   }
 }

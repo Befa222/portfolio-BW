@@ -6,6 +6,8 @@ import p1 from './images/gameMain.png';
 import p2 from './images/pikaMobile1.png';
 import portfolio3d from './video/portfolio3d.mp4';
 import p4 from './images/weather.jpg';
+import gitHubIcon from './images/gitHub.png';
+import linkedinIcon from './images/linkedin-64.ico';
 import './App.css';
 
 function App() {
@@ -101,14 +103,34 @@ function App() {
         {projects && (
           <section id="projects-section">
             <div id="projects-container">
-              <h1>Projects: click for details</h1>
+              <h1 id="project-container-title">Projects: click for details</h1>
               <div className="flip-card">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
                     <img src={p1} alt="game" />
                   </div>
                   <div className="flip-card-back">
-                    <h1>John Doe</h1>
+                    <h1 className="project-name">Memory Game</h1>
+                    <br />
+                    <ul className="project-details">
+                      <li>Find the matching pairs!</li>
+                      <li>Sign in, log in, save your best time.</li>
+                      <li>Leaderboard.</li>
+                      <li>
+                        TECH: HTML, CSS, JS, Firebase, React, Context, Hooks,
+                        React Router.
+                      </li>
+                      <li>
+                        LINK:{' '}
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href="https://memory-game-fabien-lallement.netlify.app/"
+                        >
+                          Memory Game
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -118,7 +140,29 @@ function App() {
                     <img src={p2} alt="food-app" />
                   </div>
                   <div className="flip-card-back">
-                    <h1>John Doe</h1>
+                    <h1 className="project-name">Pick a Chew</h1>
+                    <br />
+                    <ul className="project-details">
+                      <li>
+                        Food app that finds receipes with the ingredients you
+                        have at home.
+                      </li>
+                      <li>Diffrent UI for mobile and desktop.</li>
+                      <li>
+                        TECH: React, Spoonacular Api, JS, Axios, Hooks, CSS,
+                        React Router, NPM.
+                      </li>
+                      <li>
+                        LINK:{' '}
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href="https://pick-a-chew.netlify.app/"
+                        >
+                          Pick a Chew
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -139,7 +183,28 @@ function App() {
                     </video>
                   </div>
                   <div className="flip-card-back">
-                    <h1>John Doe</h1>
+                    <h1 className="project-name">Star Wars portfolio</h1>
+                    <br />
+                    <ul className="project-details">
+                      <li>
+                        A version of my portfolio using imported 3d models.
+                      </li>
+                      <li>
+                        It was a lot of fun and sweat, but definitely a huge
+                        learning experience.
+                      </li>
+                      <li>TECH: React, react router, Three JS, hooks, CSS.</li>
+                      <li>
+                        LINK:{' '}
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href="https://fabien-lallement-3d-portfolio.netlify.app/"
+                        >
+                          3d Portfolio
+                        </a>{' '}
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -149,7 +214,28 @@ function App() {
                     <img src={p4} alt="weather app" />
                   </div>
                   <div className="flip-card-back">
-                    <h1>John Doe</h1>
+                    <h1 className="project-name">Weather app</h1>
+                    <br />
+                    <ul className="project-details">
+                      <li>Weather app with two different UI.</li>
+                      <li>
+                        App made for training purposes with Neumorphism and
+                        Glassphormism.
+                      </li>
+                      <li>
+                        TECH: React, Open Weather Api, JS, Styled Components.
+                      </li>
+                      <li>
+                        LINK:{' '}
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href="https://loving-raman-112067.netlify.app/"
+                        >
+                          Weather App
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -168,8 +254,46 @@ function App() {
               <div id="contact-container-title">
                 <h1 id="contact-container-title-text">Contact me</h1>
               </div>
-              <div id="form-container"></div>
-              <div id="links-container"></div>
+              <div id="form-container">
+                <form>
+                  <input
+                    className="form-input-field"
+                    type="text"
+                    name="_name"
+                    required
+                    placeholder="Your Name"
+                  />
+                  <input
+                    className="form-input-field"
+                    type="email"
+                    name="_email"
+                    required
+                    placeholder="Your email"
+                  />
+                  <textarea
+                    name="message"
+                    required
+                    placeholder="Your message"
+                  />
+                  <input id="send-button" type="submit" value="Send" />
+                </form>
+              </div>
+              <div id="links-container">
+                <a
+                  href="https://github.com/Befa222"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img id="githubIcon" src={gitHubIcon} alt="gitHub-squid" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/fabien-lallement-d2s/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img id="linkedinIcon" src={linkedinIcon} alt="logo" />
+                </a>
+              </div>
               <button id="close-button2" onClick={() => setContact(false)}>
                 X
               </button>
