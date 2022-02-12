@@ -49,13 +49,10 @@ function App() {
               <h1 id="projects-text2">Projects</h1>
               <h1 id="projects-text3">Projects</h1>
               <h1 id="projects-text4">Projects</h1>
-              <h1 id="projects-text5">Projects</h1>
-              <h1 id="projects-text6">Projects</h1>
               <h3 className="click">[ Click ]</h3>
             </div>
             <div onClick={() => setAbout(true)} className="cube-face face-left">
-              <h1 id="about-text1">About </h1>
-              <h1 id="about-text2">Me</h1>
+              <h1 id="about-text">About me</h1>
               <h3 className="click">[ Click ]</h3>
             </div>
             <div className="cube-face face-top">
@@ -104,138 +101,142 @@ function App() {
           <section id="projects-section">
             <div id="projects-container">
               <h1 id="project-container-title">Projects: click for details</h1>
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <img src={p1} alt="game" />
-                  </div>
-                  <div className="flip-card-back">
-                    <h1 className="project-name">Memory Game</h1>
-                    <br />
-                    <ul className="project-details">
-                      <li>Find the matching pairs!</li>
-                      <li>Sign in, log in, save your best time.</li>
-                      <li>Leaderboard.</li>
-                      <li>
-                        TECH: HTML, CSS, JS, Firebase, React, Context, Hooks,
-                        React Router.
-                      </li>
-                      <li>
-                        LINK:{' '}
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://memory-game-fabien-lallement.netlify.app/"
-                        >
-                          Memory Game
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <img src={p2} alt="food-app" />
-                  </div>
-                  <div className="flip-card-back">
-                    <h1 className="project-name">Pick a Chew</h1>
-                    <br />
-                    <ul className="project-details">
-                      <li>
-                        Food app that finds receipes with the ingredients you
-                        have at home.
-                      </li>
-                      <li>Diffrent UI for mobile and desktop.</li>
-                      <li>
-                        TECH: React, Spoonacular Api, JS, Axios, Hooks, CSS,
-                        React Router, NPM.
-                      </li>
-                      <li>
-                        LINK:{' '}
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://pick-a-chew.netlify.app/"
-                        >
-                          Pick a Chew
-                        </a>
-                      </li>
-                    </ul>
+              <div id="projects">
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <img src={p1} alt="game" />
+                    </div>
+                    <div className="flip-card-back">
+                      <h1 className="project-name">Memory Game</h1>
+                      <br />
+                      <ul className="project-details">
+                        <li>Find the matching pairs!</li>
+                        <li>Sign in, log in, save your best time.</li>
+                        <li>Leaderboard.</li>
+                        <li>
+                          TECH: HTML, CSS, JS, Firebase, React, Context, Hooks,
+                          React Router.
+                        </li>
+                        <li>
+                          LINK:{' '}
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://memory-game-fabien-lallement.netlify.app/"
+                          >
+                            Memory Game
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <video
-                      autoPlay={true}
-                      muted={true}
-                      loop={true}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                      }}
-                    >
-                      <source src={portfolio3d} type="video/mp4" />
-                    </video>
-                  </div>
-                  <div className="flip-card-back">
-                    <h1 className="project-name">Star Wars portfolio</h1>
-                    <br />
-                    <ul className="project-details">
-                      <li>
-                        A version of my portfolio using imported 3d models.
-                      </li>
-                      <li>
-                        It was a lot of fun and sweat, but definitely a huge
-                        learning experience.
-                      </li>
-                      <li>TECH: React, react router, Three JS, hooks, CSS.</li>
-                      <li>
-                        LINK:{' '}
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://fabien-lallement-3d-portfolio.netlify.app/"
-                        >
-                          3d Portfolio
-                        </a>{' '}
-                      </li>
-                    </ul>
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <img src={p2} alt="food-app" />
+                    </div>
+                    <div className="flip-card-back">
+                      <h1 className="project-name">Pick a Chew</h1>
+                      <br />
+                      <ul className="project-details">
+                        <li>
+                          Food app that finds receipes with the ingredients you
+                          have at home.
+                        </li>
+                        <li>Diffrent UI for mobile and desktop.</li>
+                        <li>
+                          TECH: React, Spoonacular Api, JS, Axios, Hooks, CSS,
+                          React Router, NPM.
+                        </li>
+                        <li>
+                          LINK:{' '}
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://pick-a-chew.netlify.app/"
+                          >
+                            Pick a Chew
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <img src={p4} alt="weather app" />
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <video
+                        autoPlay={true}
+                        muted={true}
+                        loop={true}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                        }}
+                      >
+                        <source src={portfolio3d} type="video/mp4" />
+                      </video>
+                    </div>
+                    <div className="flip-card-back">
+                      <h1 className="project-name">Star Wars portfolio</h1>
+                      <br />
+                      <ul className="project-details">
+                        <li>
+                          A version of my portfolio using imported 3d models.
+                        </li>
+                        <li>
+                          It was a lot of fun and sweat, but definitely a huge
+                          learning experience.
+                        </li>
+                        <li>
+                          TECH: React, react router, Three JS, hooks, CSS.
+                        </li>
+                        <li>
+                          LINK:{' '}
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://fabien-lallement-3d-portfolio.netlify.app/"
+                          >
+                            3d Portfolio
+                          </a>{' '}
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div className="flip-card-back">
-                    <h1 className="project-name">Weather app</h1>
-                    <br />
-                    <ul className="project-details">
-                      <li>Weather app with two different UI.</li>
-                      <li>
-                        App made for training purposes with Neumorphism and
-                        Glassphormism.
-                      </li>
-                      <li>
-                        TECH: React, Open Weather Api, JS, Styled Components.
-                      </li>
-                      <li>
-                        LINK:{' '}
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://loving-raman-112067.netlify.app/"
-                        >
-                          Weather App
-                        </a>
-                      </li>
-                    </ul>
+                </div>
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <img src={p4} alt="weather app" />
+                    </div>
+                    <div className="flip-card-back">
+                      <h1 className="project-name">Weather app</h1>
+                      <br />
+                      <ul className="project-details">
+                        <li>Weather app with two different UI.</li>
+                        <li>
+                          App made for training purposes with Neumorphism and
+                          Glassphormism.
+                        </li>
+                        <li>
+                          TECH: React, Open Weather Api, JS, Styled Components.
+                        </li>
+                        <li>
+                          LINK:{' '}
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://loving-raman-112067.netlify.app/"
+                          >
+                            Weather App
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

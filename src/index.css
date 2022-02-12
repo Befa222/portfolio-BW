@@ -20,6 +20,11 @@ body {
   color: var(--Accent);
   font-family: Russo One;
 }
+@media screen and (orientation: landscape) {
+  body {
+    overflow-y: hidden;
+  }
+}
 @font-face {
   font-family: Russo One;
   src: url('./fonts/RussoOne-Regular.ttf');

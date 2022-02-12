@@ -14,7 +14,7 @@ export default function SwithTheme() {
           particulesColor();
         }}
         style={{
-          transform: switchButton ? 'translateX(8vw)' : 'translateX(0vw)',
+          transform: switchButton ? 'translateX(100%)' : 'translateX(0vw)',
         }}
         className="switch"
       ></div>
