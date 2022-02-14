@@ -1,3 +1,7 @@
 {
-  "main-title": "Développeur Front end"
+  "main-title": "Développeur Front end",
+  "main-button-main": "Accueuil",
+  "main-button-projects": "Projets",
+  "main-button-contact": "Contact",
+  "main-button-about": "A propos"
 }

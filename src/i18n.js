@@ -9,16 +9,19 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '/asset/i18/main/{{lng}}.json',
+      loadPath: '/assets/i18n/{{ns}}/{{lng}}.json',
     },
+    defaultNS: 'main',
     fallbackLng: 'en',
     debug: false,
+    ns: ['main'],
     interpolation: {
       escapeValue: false,
       formatSeparator: ',',
     },
     react: {
-      wait: true,
+      useSuspense: false,
+      wait: false,
     },
   });
 

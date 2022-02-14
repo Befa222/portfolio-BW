@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, useEffect } from 'react';
 import TsParticules from './components/TsParticles';
 import SwithTheme from './components/SwithTheme';
 import { ThemeProvider } from './contexts/context';
+import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import p1 from './images/gameMain.png';
 import p2 from './images/pikaMobile1.png';
@@ -28,12 +29,26 @@ function App() {
   function right() {
     document.querySelector('.cube').style.webkitTransform = 'rotateY(-90deg)';
   }
-  const { t } = useTranslation(['main']);
+  const { i18n, t } = useTranslation(['main']);
+
+  useEffect(() => {
+    if (localStorage.getItem('i18nextLng')?.length > 2) {
+      i18next.changeLanguage('en');
+    }
+  }, []);
+
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
   return (
     <ThemeProvider>
       <div id="mobile-portrait">
         <div id="theme-container">
-          <select id="language-container">
+          <select
+            id="language-container"
+            onChange={handleLanguageChange}
+            value={localStorage.getItem('i18nextLng')}
+          >
             <option className="language-options" value="en">
               English
             </option>
@@ -310,20 +325,20 @@ function App() {
         <div id="controls-container">
           <div id="about-button-container">
             <button id="about-button" onClick={() => left()}>
-              About me
+              {t('main-button-about')}
             </button>
           </div>
           <div id="contact-main-button-container">
             <button id="main-button" onClick={() => front()}>
-              Main
+              {t('main-button-main')}
             </button>
             <button id="contact-button" onClick={() => down()}>
-              Contact me
+              {t('main-button-contact')}
             </button>
           </div>
           <div id="projects-button-container">
             <button id="projects-button" onClick={() => right()}>
-              Projects
+              {t('main-button-projects')}
             </button>
           </div>
         </div>
