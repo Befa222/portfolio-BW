@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TsParticules from './components/TsParticles';
 import SwithTheme from './components/SwithTheme';
 import { ThemeProvider } from './contexts/context';
+import { useTranslation } from 'react-i18next';
 import p1 from './images/gameMain.png';
 import p2 from './images/pikaMobile1.png';
 import p3 from './images/3dport.png';
@@ -27,10 +28,19 @@ function App() {
   function right() {
     document.querySelector('.cube').style.webkitTransform = 'rotateY(-90deg)';
   }
+  const { t } = useTranslation(['main']);
   return (
     <ThemeProvider>
       <div id="mobile-portrait">
         <div id="theme-container">
+          <select id="language-container">
+            <option className="language-options" value="en">
+              English
+            </option>
+            <option className="language-options" value="fr">
+              Français
+            </option>
+          </select>
           <SwithTheme />
         </div>
         <div className="scene">
@@ -38,7 +48,7 @@ function App() {
             <div className="cube-face face-front">
               <h1 className="name">Fabien</h1>
               <h1 className="name">Lallement</h1>
-              <h2 id="title">Front End Developer</h2>
+              <h2 id="title">{t('main-title')}</h2>
             </div>
             <div className="cube-face face-back">back</div>
             <div
