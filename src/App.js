@@ -4,7 +4,7 @@ import SwithTheme from './components/SwithTheme';
 import { ThemeProvider } from './contexts/context';
 import p1 from './images/gameMain.png';
 import p2 from './images/pikaMobile1.png';
-import portfolio3d from './video/portfolio3d.mp4';
+import p3 from './images/3dport.png';
 import p4 from './images/weather.jpg';
 import gitHubIcon from './images/gitHub.png';
 import linkedinIcon from './images/linkedin-64.ico';
@@ -101,6 +101,9 @@ function App() {
           <section id="projects-section">
             <div id="projects-container">
               <h1 id="project-container-title">Projects: click for details</h1>
+              <h1 id="project-container-title-desktop">
+                Projects: hover for details
+              </h1>
               <div id="projects">
                 <div className="flip-card">
                   <div className="flip-card-inner">
@@ -121,6 +124,7 @@ function App() {
                         <li>
                           LINK:{' '}
                           <a
+                            className="deployed-link"
                             target="_blank"
                             rel="noreferrer"
                             href="https://memory-game-fabien-lallement.netlify.app/"
@@ -153,6 +157,7 @@ function App() {
                         <li>
                           LINK:{' '}
                           <a
+                            className="deployed-link"
                             target="_blank"
                             rel="noreferrer"
                             href="https://pick-a-chew.netlify.app/"
@@ -167,18 +172,7 @@ function App() {
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <video
-                        autoPlay={true}
-                        muted={true}
-                        loop={true}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'contain',
-                        }}
-                      >
-                        <source src={portfolio3d} type="video/mp4" />
-                      </video>
+                      <img src={p3} alt="starwars" />
                     </div>
                     <div className="flip-card-back">
                       <h1 className="project-name">Star Wars portfolio</h1>
@@ -197,12 +191,13 @@ function App() {
                         <li>
                           LINK:{' '}
                           <a
+                            className="deployed-link"
                             target="_blank"
                             rel="noreferrer"
                             href="https://fabien-lallement-3d-portfolio.netlify.app/"
                           >
                             3d Portfolio
-                          </a>{' '}
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -228,6 +223,7 @@ function App() {
                         <li>
                           LINK:{' '}
                           <a
+                            className="deployed-link"
                             target="_blank"
                             rel="noreferrer"
                             href="https://loving-raman-112067.netlify.app/"

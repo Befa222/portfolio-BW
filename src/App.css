@@ -41,11 +41,11 @@
   width: 100%;
   height: 100%;
   position: relative;
-  transition: transform 1s linear;
+  transition: transform 1s ease;
   transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s linear;
+  -webkit-transition: -webkit-transform 1s ease;
   -webkit-transform-style: preserve-3d;
-  -moz-transition: -webkit-transform 1s linear;
+  -moz-transition: -webkit-transform 1s ease;
   -moz-transform-style: preserve-3d;
 }
 .cube-face {
@@ -184,23 +184,23 @@
 }
 #contact-button {
   animation: nameOpacity 0.5s linear forwards;
-  animation-delay: 2.5s;
+  animation-delay: 2.2s;
 }
 #about-button {
   animation: nameOpacity 0.5s linear forwards;
-  animation-delay: 3s;
+  animation-delay: 2.4s;
 }
 #main-button {
   animation: nameOpacity 0.5s linear forwards;
-  animation-delay: 3.5s;
+  animation-delay: 2.6s;
 }
 #projects-section {
   position: absolute;
-  top: 30%;
-  left: 38%;
+  top: 0;
+  left: 0;
   background-color: var(--BgColor);
   z-index: 5;
-  animation: projectsSection 1.5s ease-in-out forwards;
+  animation: projectsSection 1s ease forwards;
 }
 #projects-container {
   display: flex;
@@ -212,10 +212,13 @@
   height: 100%;
   opacity: 0;
   animation: nameOpacity 0.25s linear forwards;
-  animation-delay: 1.7s;
+  animation-delay: 1.1s;
 }
 #project-container-title {
   font-size: clamp(1.2rem, 6vw, 2.2rem);
+}
+#project-container-title-desktop {
+  display: none;
 }
 #projects {
   display: flex;
@@ -256,7 +259,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--BgColor);
-  border: 1vw solid var(--Accent);
+  border: clamp(0.4rem, 0.9vw, 1rem) solid var(--Accent);
 }
 img {
   max-width: 100%;
@@ -277,6 +280,7 @@ img {
   list-style: none;
   line-height: normal;
 }
+
 #about-container1 {
   position: absolute;
   width: 100%;
@@ -595,22 +599,13 @@ textarea {
   0% {
     width: 0;
     height: 0;
+    border: clamp(0.3rem, 1vw, 1rem) solid var(--Accent);
   }
-  0.1% {
-    width: 1vw;
-    height: 1vw;
-    border: 1.5vw solid var(--Accent);
-    border-radius: 50%;
-  }
-  99% {
-    border: 1.5vw solid var(--Accent);
-    width: 90vw;
-    height: 90vw;
-    border-radius: 50%;
+  90% {
+    border: clamp(0.3rem, 1vw, 1rem) solid var(--Accent);
   }
   100% {
     border: none;
-    transform: translate(-38%, -15%);
     width: 100vw;
     height: 200vh;
     border-radius: 0%;
@@ -684,7 +679,7 @@ textarea {
 }
 @media screen and (orientation: landscape) {
   .scene {
-    top: 25vh;
+    top: 20vh;
     left: 40vw;
     width: 20vw;
     height: 20vw;
@@ -795,6 +790,42 @@ textarea {
     border: 0.3vw solid var(--Accent);
     cursor: pointer;
   }
+  #contact-container-title-text {
+    font-size: clamp(1rem, 3.5vw, 5.2rem);
+  }
+  #form-container {
+    top: 5%;
+    width: 40%;
+    left: 30%;
+    height: 55vh;
+    border-radius: 0.5vw;
+  }
+  .form-input-field {
+    border-radius: 0.5vw;
+  }
+  textarea {
+    border-radius: 0.5vw;
+  }
+  #send-button {
+    font-size: clamp(1rem, 2vw, 3rem);
+    border-radius: 0.5vw;
+    cursor: pointer;
+  }
+  #links-container {
+    width: 40%;
+    height: 15vh;
+    left: 30%;
+    background-color: #131313;
+    border: 2px solid var(--BgColor);
+    border-radius: 0.5vw;
+  }
+  #about-title1 {
+    font-size: clamp(1rem, 4vw, 6rem);
+    top: 84%;
+  }
+  #about-title2 {
+    font-size: clamp(1rem, 4vw, 6rem);
+  }
   #controls-container {
     bottom: 2vw;
     height: 20vh;
@@ -810,8 +841,71 @@ textarea {
   #contact-button,
   #about-button,
   #main-button {
-    font-size: 2vw;
+    font-size: 1.5vw;
     padding: 0.4vw;
     border-radius: 0.5vw;
+    cursor: pointer;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  #about-title1 {
+    font-size: clamp(1rem, 4vw, 3rem);
+    top: 84%;
+  }
+  #about-title2 {
+    font-size: clamp(1rem, 4vw, 3rem);
+  }
+  #about-container1-text,
+  #about-container2-text {
+    padding: clamp(0.5rem, 1vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+  #githubIcon,
+  #linkedinIcon {
+    transform: scale(0.7);
+  }
+}
+@media screen and (orientation: landscape) and (min-width: 1200px) {
+  #project-container-title {
+    display: none;
+  }
+  #project-container-title-desktop {
+    display: contents;
+    font-size: clamp(1.2rem, 6vw, 2.2rem);
+  }
+  .deployed-link {
+    text-decoration: none;
+    color: var(--BgColor);
+    position: relative;
+  }
+  .deployed-link::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 15%;
+    width: 100%;
+    height: 40%;
+    background-color: var(--BgColor);
+    z-index: -1;
+  }
+  .deployed-link:hover,
+  .deployed-link:hover::after {
+    color: var(--Accent);
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    transition-duration: 0.5s;
+  }
+  #close-button1:hover {
+    transform: scale(1.1);
+    transition-duration: 0.25s;
+  }
+  #close-button2:hover {
+    transform: scale(1.1);
+    transition-duration: 0.25s;
+  }
+  #close-button-projects:hover {
+    transform: scale(1.1);
+    transition-duration: 0.25s;
   }
 }

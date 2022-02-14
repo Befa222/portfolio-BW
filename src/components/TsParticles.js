@@ -9,7 +9,7 @@ export default function TsParticles() {
       <Particles
         id="tsparticles"
         options={{
-          fpsLimit: 120,
+          fpsLimit: 60,
           interactivity: {
             events: {
               onClick: {
@@ -57,15 +57,15 @@ export default function TsParticles() {
               enable: true,
               outMode: 'bounce',
               random: false,
-              speed: 1,
+              speed: 0.5,
               straight: false,
             },
             number: {
               density: {
                 enable: true,
-                area: 800,
+                area: 500,
               },
-              value: 80,
+              value: 40,
             },
             opacity: {
               value: 0.5,
