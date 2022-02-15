@@ -3,5 +3,36 @@
   "main-button-main": "Main",
   "main-button-projects": "Projects",
   "main-button-contact": "Contact me",
-  "main-button-about": "About me"
+  "main-button-about": "About me",
+  "click-cube-face": "Click",
+
+  "projects-section-title": "Projects: click for details",
+  "projects-section-title-desktop": "Projects: hover for details",
+  "project1-title": "Memory game",
+  "project1-details1": "Find the matching pairs!",
+  "project1-details2": "Sign up, log in, save your best time.",
+  "project1-details3": "Leaderboard.",
+  "projects-links": "LINK:",
+
+  "project2-details1": "Food app that finds receipes with the ingredients you have at home.",
+  "project2-details2": "Different UI for mobile and desktop.",
+
+  "project3-details1": "A version of my portfolio using ThreeJs.",
+  "project3-details2": "It was a lot of fun and sweat but definitely a huge learning experience.",
+
+  "project4-title": "Weather app",
+  "project4-details1": "Weather app with two diffrent UI.",
+  "project4-details2": "App made for training purposes with Neumorphism and Glassphormism.",
+
+  "about-me-title1": "About",
+  "about-me-title2": "Me",
+  "about-me-text1": "I'm a junior French developer who spent 14 years in London.",
+  "about-me-text2": "I'm in love with React and Css and enjoy building apps and websites with creative designs. ",
+  "about-me-skills": "Skills:",
+
+  "contact-me-title": "Contact me",
+  "contact-me-form-name": "Your name",
+  "contact-me-form-email": "Your email",
+  "contact-me-form-message": "Your message",
+  "contact-me-form-send-button": "Send"
 }

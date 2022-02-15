@@ -316,7 +316,7 @@ img {
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  font-size: clamp(2.5rem, 12vw, 3.5rem);
+  font-size: clamp(2rem, 11vw, 3.5rem);
   top: 88%;
   color: var(--BgColor);
 }
@@ -324,7 +324,7 @@ img {
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  font-size: clamp(2.5rem, 12vw, 3.5rem);
+  font-size: clamp(2rem, 11vw, 3.5rem);
   top: 0%;
   color: var(--Accent);
 }
@@ -365,7 +365,7 @@ img {
   height: 100vh;
 }
 #contact-container-title-text {
-  font-size: clamp(3.3rem, 14vw, 5.2rem);
+  font-size: clamp(2rem, 12vw, 5.2rem);
   color: var(--BgColor);
   text-transform: uppercase;
   writing-mode: vertical-rl;
@@ -741,7 +741,7 @@ textarea {
     font-size: clamp(0.7rem, 1.5vw, 2.3rem);
   }
   .click {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1rem, 1.8vw, 1.8rem);
     transform: translate(-50%, -50%);
     cursor: pointer;
   }

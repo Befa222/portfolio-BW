@@ -3,5 +3,36 @@
   "main-button-main": "Accueuil",
   "main-button-projects": "Projets",
   "main-button-contact": "Contact",
-  "main-button-about": "A propos"
+  "main-button-about": "A propos",
+  "click-cube-face": "Cliquez",
+
+  "projects-section-title": "Projets: cliquez pour les détails",
+  "projects-section-title-desktop": "Projets: passez la souris sur les images pour les détails",
+  "project1-title": "Jeu de mémoire",
+  "project1-details1": "Trouvez les paires identiques!",
+  "project1-details2": "Créez un compte, sauvegardez votre temps.",
+  "project1-details3": "Classement.",
+  "projects-links": "LIEN:",
+
+  "project2-details1": "App qui trouve des recettes avec les ingrédients que vous avez.",
+  "project2-details2": "UI différent pour le téléphone et le bureau.",
+
+  "project3-details1": "Une version de mon portfolio avec ThreeJs.",
+  "project3-details2": "C'était un challenge mais un bon exercice d'apprentissage.",
+
+  "project4-title": "App météo",
+  "project4-details1": "App météo avec deux différents UI.",
+  "project4-details2": "App faites pour tester les styles Glassmorphism et Neumorphism.",
+
+  "about-me-title1": "A propos",
+  "about-me-title2": "De moi",
+  "about-me-text1": "Je suis un junior développeur Frontend de retour en France après 14 ans passés à Londres.",
+  "about-me-text2": "Amoureux de React et Css j'aime construire des apps et des sites web aux concepts originaux.",
+  "about-me-skills": "Compétences:",
+
+  "contact-me-title": "Me contacter",
+  "contact-me-form-name": "Votre nom",
+  "contact-me-form-email": "Votre email",
+  "contact-me-form-message": "Votre message",
+  "contact-me-form-send-button": "Envoyer"
 }

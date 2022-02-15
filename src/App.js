@@ -1,13 +1,13 @@
-import React, { useState, Suspense, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import TsParticules from './components/TsParticles';
 import SwithTheme from './components/SwithTheme';
 import { ThemeProvider } from './contexts/context';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
-import p1 from './images/gameMain.png';
-import p2 from './images/pikaMobile1.png';
-import p3 from './images/3dport.png';
-import p4 from './images/weather.jpg';
+import project1Image from './images/gameMain.png';
+import project2Image from './images/pikaMobile1.png';
+import project3Image from './images/3dport.png';
+import project4Image from './images/weather.jpg';
 import gitHubIcon from './images/gitHub.png';
 import linkedinIcon from './images/linkedin-64.ico';
 import './App.css';
@@ -74,11 +74,11 @@ function App() {
               <h1 id="projects-text2">Projects</h1>
               <h1 id="projects-text3">Projects</h1>
               <h1 id="projects-text4">Projects</h1>
-              <h3 className="click">[ Click ]</h3>
+              <h3 className="click">[ {t('click-cube-face')} ]</h3>
             </div>
             <div onClick={() => setAbout(true)} className="cube-face face-left">
               <h1 id="about-text">About me</h1>
-              <h3 className="click">[ Click ]</h3>
+              <h3 className="click">[ {t('click-cube-face')} ]</h3>
             </div>
             <div className="cube-face face-top">
               <h1>Top</h1>
@@ -88,7 +88,7 @@ function App() {
               className="cube-face face-bottom"
             >
               <h1 id="contact-text">Contact Me</h1>
-              <h3 className="click">[ Click ]</h3>
+              <h3 className="click">[ {t('click-cube-face')} ]</h3>
             </div>
           </div>
         </div>
@@ -96,24 +96,18 @@ function App() {
           <section id="about-section">
             <div id="about-container1">
               <div id="about-container1-text">
-                <p>
-                  I'm a French front-end developer who spent 14 years in London.
-                </p>
-                <p>
-                  I like anything creative and fell in love with Css and React.
-                  I love building projects from sratch and avoid the use of
-                  package as much as possible.
-                </p>
+                <p>{t('about-me-text1')}</p>
+                <p>{t('about-me-text2')}</p>
               </div>
-              <h1 id="about-title1">About</h1>
+              <h1 id="about-title1">{t('about-me-title1')}</h1>
             </div>
             <div id="about-container2">
-              <h1 id="about-title2">Me</h1>
+              <h1 id="about-title2">{t('about-me-title2')}</h1>
               <div id="about-container2-text">
-                <h1>Skills :</h1>
+                <h1>{t('about-me-skills')}</h1>
                 <p>
-                  Html, CSS, React, Javascript, Keyframes animation, React
-                  Context, React Router, Hooks...
+                  Html, CSS, React, Javascript, Keyframes animation, Stlyled
+                  components, React Context, React Router, Hooks, Axios...
                 </p>
               </div>
               <button id="close-button1" onClick={() => setAbout(false)}>
@@ -125,36 +119,38 @@ function App() {
         {projects && (
           <section id="projects-section">
             <div id="projects-container">
-              <h1 id="project-container-title">Projects: click for details</h1>
+              <h1 id="project-container-title">
+                {t('projects-section-title')}
+              </h1>
               <h1 id="project-container-title-desktop">
-                Projects: hover for details
+                {t('projects-section-title-desktop')}
               </h1>
               <div id="projects">
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <img src={p1} alt="game" />
+                      <img src={project1Image} alt="game" />
                     </div>
                     <div className="flip-card-back">
-                      <h1 className="project-name">Memory Game</h1>
+                      <h1 className="project-name">{t('project1-title')}</h1>
                       <br />
                       <ul className="project-details">
-                        <li>Find the matching pairs!</li>
-                        <li>Sign in, log in, save your best time.</li>
-                        <li>Leaderboard.</li>
+                        <li>{t('project1-details1')}</li>
+                        <li>{t('project1-details2')}</li>
+                        <li>{t('project1-details3')}</li>
                         <li>
                           TECH: HTML, CSS, JS, Firebase, React, Context, Hooks,
                           React Router.
                         </li>
                         <li>
-                          LINK:{' '}
+                          {t('projects-links')}{' '}
                           <a
                             className="deployed-link"
                             target="_blank"
                             rel="noreferrer"
                             href="https://memory-game-fabien-lallement.netlify.app/"
                           >
-                            Memory Game
+                            {t(t('project1-title'))}
                           </a>
                         </li>
                       </ul>
@@ -164,23 +160,20 @@ function App() {
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <img src={p2} alt="food-app" />
+                      <img src={project2Image} alt="food-app" />
                     </div>
                     <div className="flip-card-back">
                       <h1 className="project-name">Pick a Chew</h1>
                       <br />
                       <ul className="project-details">
-                        <li>
-                          Food app that finds receipes with the ingredients you
-                          have at home.
-                        </li>
-                        <li>Diffrent UI for mobile and desktop.</li>
+                        <li>{t('project2-details1')}</li>
+                        <li>{t('project2-details2')}</li>
                         <li>
                           TECH: React, Spoonacular Api, JS, Axios, Hooks, CSS,
                           React Router, NPM.
                         </li>
                         <li>
-                          LINK:{' '}
+                          {t('projects-links')}{' '}
                           <a
                             className="deployed-link"
                             target="_blank"
@@ -197,24 +190,19 @@ function App() {
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <img src={p3} alt="starwars" />
+                      <img src={project3Image} alt="starwars" />
                     </div>
                     <div className="flip-card-back">
                       <h1 className="project-name">Star Wars portfolio</h1>
                       <br />
                       <ul className="project-details">
-                        <li>
-                          A version of my portfolio using imported 3d models.
-                        </li>
-                        <li>
-                          It was a lot of fun and sweat, but definitely a huge
-                          learning experience.
-                        </li>
+                        <li>{t('project3-details1')}</li>
+                        <li>{t('project3-details2')}</li>
                         <li>
                           TECH: React, react router, Three JS, hooks, CSS.
                         </li>
                         <li>
-                          LINK:{' '}
+                          {t('projects-links')}{' '}
                           <a
                             className="deployed-link"
                             target="_blank"
@@ -231,29 +219,26 @@ function App() {
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <img src={p4} alt="weather app" />
+                      <img src={project4Image} alt="weather app" />
                     </div>
                     <div className="flip-card-back">
-                      <h1 className="project-name">Weather app</h1>
+                      <h1 className="project-name">{t('project4-title')}</h1>
                       <br />
                       <ul className="project-details">
-                        <li>Weather app with two different UI.</li>
-                        <li>
-                          App made for training purposes with Neumorphism and
-                          Glassphormism.
-                        </li>
+                        <li>{t('project4-details1')}</li>
+                        <li>{t('project4-details2')}</li>
                         <li>
                           TECH: React, Open Weather Api, JS, Styled Components.
                         </li>
                         <li>
-                          LINK:{' '}
+                          {t('projects-links')}{' '}
                           <a
                             className="deployed-link"
                             target="_blank"
                             rel="noreferrer"
                             href="https://loving-raman-112067.netlify.app/"
                           >
-                            Weather App
+                            {t('project4-title')}
                           </a>
                         </li>
                       </ul>
@@ -274,7 +259,9 @@ function App() {
           <section id="contact-section">
             <div id="contact-container">
               <div id="contact-container-title">
-                <h1 id="contact-container-title-text">Contact me</h1>
+                <h1 id="contact-container-title-text">
+                  {t('contact-me-title')}
+                </h1>
               </div>
               <div id="form-container">
                 <form>
@@ -283,21 +270,25 @@ function App() {
                     type="text"
                     name="_name"
                     required
-                    placeholder="Your Name"
+                    placeholder={t('contact-me-form-name')}
                   />
                   <input
                     className="form-input-field"
                     type="email"
                     name="_email"
                     required
-                    placeholder="Your email"
+                    placeholder={t('contact-me-form-email')}
                   />
                   <textarea
                     name="message"
                     required
-                    placeholder="Your message"
+                    placeholder={t('contact-me-form-message')}
                   />
-                  <input id="send-button" type="submit" value="Send" />
+                  <input
+                    id="send-button"
+                    type="submit"
+                    value={t('contact-me-form-send-button')}
+                  />
                 </form>
               </div>
               <div id="links-container">
