@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Particles from 'react-tsparticles';
 import { useTheme } from '../contexts/context';
 
