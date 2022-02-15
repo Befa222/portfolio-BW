@@ -416,6 +416,14 @@ textarea {
   border: none;
   border-radius: 2vw;
 }
+#email-popup {
+  position: absolute;
+  text-align: center;
+  top: 80%;
+  width: 100%;
+  height: 20%;
+  background-color: var(--BgColor);
+}
 #links-container {
   position: absolute;
   display: flex;
@@ -430,7 +438,7 @@ textarea {
   border-radius: 3vw;
 }
 
-#close-button1,
+.close-button1,
 #close-button2 {
   position: absolute;
   top: 90%;
@@ -442,7 +450,7 @@ textarea {
   font-size: 5vw;
   font-family: Russo One;
 }
-#close-button1 {
+.close-button1 {
   border: 0.7vw solid var(--Accent);
   color: var(--Accent);
 }
@@ -780,7 +788,7 @@ textarea {
     padding: 1vw;
     font-size: clamp(0.64rem, 1.1vw, 1.8rem);
   }
-  #close-button1,
+  .close-button1,
   #close-button2 {
     left: 48.5%;
     width: 3vw;
@@ -788,7 +796,7 @@ textarea {
     font-size: 2vw;
     cursor: pointer;
   }
-  #close-button1 {
+  .close-button1 {
     top: 80%;
     border: 0.3vw solid var(--Accent);
   }

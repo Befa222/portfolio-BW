@@ -4,6 +4,7 @@ import SwithTheme from './components/SwithTheme';
 import { ThemeProvider } from './contexts/context';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 import project1Image from './images/gameMain.png';
 import project2Image from './images/pikaMobile1.png';
 import project3Image from './images/3dport.png';
@@ -16,6 +17,7 @@ function App() {
   const [projects, setProjects] = useState(false);
   const [contact, setContact] = useState(false);
   const [about, setAbout] = useState(false);
+  const [emailPopup, setEmailPopup] = useState(false);
 
   function front() {
     document.querySelector('.cube').style.webkitTransform = 'rotateX(0deg)';
@@ -40,6 +42,26 @@ function App() {
   const handleLanguageChange = (e) => {
     i18n.changeLanguage(e.target.value);
   };
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_42wcai8',
+        'template_pacrvr9',
+        e.target,
+        'user_2GGglIWKLZaKHdfcHpWH0'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
   return (
     <ThemeProvider>
       <div id="mobile-portrait">
@@ -110,7 +132,7 @@ function App() {
                   components, React Context, React Router, Hooks, Axios...
                 </p>
               </div>
-              <button id="close-button1" onClick={() => setAbout(false)}>
+              <button className="close-button1" onClick={() => setAbout(false)}>
                 X
               </button>
             </div>
@@ -264,7 +286,7 @@ function App() {
                 </h1>
               </div>
               <div id="form-container">
-                <form>
+                <form onSubmit={sendEmail}>
                   <input
                     className="form-input-field"
                     type="text"
@@ -285,11 +307,17 @@ function App() {
                     placeholder={t('contact-me-form-message')}
                   />
                   <input
+                    onClick={() => setEmailPopup(!emailPopup)}
                     id="send-button"
                     type="submit"
                     value={t('contact-me-form-send-button')}
                   />
                 </form>
+                {emailPopup && (
+                  <div id="email-popup">
+                    <h1>Thank you!</h1>
+                  </div>
+                )}
               </div>
               <div id="links-container">
                 <a
@@ -307,7 +335,13 @@ function App() {
                   <img id="linkedinIcon" src={linkedinIcon} alt="logo" />
                 </a>
               </div>
-              <button id="close-button2" onClick={() => setContact(false)}>
+              <button
+                id="close-button2"
+                onClick={() => {
+                  setContact(false);
+                  setEmailPopup(!emailPopup);
+                }}
+              >
                 X
               </button>
             </div>
