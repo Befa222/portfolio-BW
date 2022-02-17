@@ -141,12 +141,14 @@ function App() {
         {projects && (
           <section id="projects-section">
             <div id="projects-container">
+              <br />
               <h1 id="project-container-title">
                 {t('projects-section-title')}
               </h1>
               <h1 id="project-container-title-desktop">
                 {t('projects-section-title-desktop')}
               </h1>
+              <br />
               <div id="projects">
                 <div className="flip-card">
                   <div className="flip-card-inner">
@@ -179,6 +181,7 @@ function App() {
                     </div>
                   </div>
                 </div>
+                <br />
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -209,6 +212,7 @@ function App() {
                     </div>
                   </div>
                 </div>
+                <br />
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -238,6 +242,7 @@ function App() {
                     </div>
                   </div>
                 </div>
+                <br />
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -268,6 +273,7 @@ function App() {
                   </div>
                 </div>
               </div>
+              <br />
               <button
                 id="close-button-projects"
                 onClick={() => setProjects(false)}
