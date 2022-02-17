@@ -220,9 +220,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  position: relative;
-  width: 100%;
-  height: 100%;
   opacity: 0;
   animation: nameOpacity 0.25s linear forwards;
   animation-delay: 1.1s;
@@ -238,8 +235,6 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  width: 100%;
-  height: 90%;
 }
 .flip-card {
   background-color: transparent;
@@ -294,11 +289,12 @@ img {
   line-height: normal;
 }
 #about-section {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 5;
 }
 #about-container1 {
   position: absolute;
@@ -351,6 +347,12 @@ img {
 #about-container2-text {
   border: 2px solid var(--Accent);
   color: var(--Accent);
+}
+#contact-section {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
 }
 #contact-container {
   position: absolute;
@@ -465,6 +467,7 @@ textarea {
   color: var(--BgColor);
 }
 #close-button-projects {
+  margin-bottom: 5vw;
   width: 8vw;
   height: 8vw;
   border-radius: 50%;

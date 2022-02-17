@@ -13,9 +13,11 @@ h3 {
 }
 
 body {
+  position: absolute;
   width: 100vw;
-  min-height: 100vh;
+  height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
   background-color: var(--BgColor);
   color: var(--Accent);
   font-family: Russo One;
