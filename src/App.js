@@ -313,7 +313,7 @@ function App() {
                     placeholder={t('contact-me-form-message')}
                   />
                   <input
-                    onClick={() => setEmailPopup(!emailPopup)}
+                    onClick={() => setEmailPopup(true)}
                     id="send-button"
                     type="submit"
                     value={t('contact-me-form-send-button')}
@@ -345,7 +345,7 @@ function App() {
                 id="close-button2"
                 onClick={() => {
                   setContact(false);
-                  setEmailPopup(!emailPopup);
+                  setEmailPopup(false);
                 }}
               >
                 X

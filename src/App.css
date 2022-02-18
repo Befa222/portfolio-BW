@@ -338,7 +338,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: clamp(1rem, 4vw, 1.5rem);
-  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(1rem, 4vw, 1.4rem);
 }
 #about-container1-text {
   border: 2px solid var(--BgColor);
@@ -762,7 +762,7 @@ textarea {
     font-size: clamp(0.7rem, 1.5vw, 2.3rem);
   }
   .click {
-    font-size: clamp(1rem, 1.8vw, 1.8rem);
+    font-size: clamp(1rem, 1.8vw, 1.7rem);
     transform: translate(-50%, -50%);
     cursor: pointer;
   }
@@ -929,7 +929,7 @@ textarea {
     height: 100%;
     transition-duration: 0.5s;
   }
-  #close-button1:hover {
+  .close-button1:hover {
     transform: scale(1.1);
     transition-duration: 0.25s;
   }
