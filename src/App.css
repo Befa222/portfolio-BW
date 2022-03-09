@@ -743,7 +743,7 @@ textarea {
   }
   #switch-container {
     width: 4%;
-    height: 26%;
+    height: 27%;
     border: 3px solid var(--Accent);
   }
   .switch {
@@ -824,7 +824,7 @@ textarea {
     cursor: pointer;
   }
   #contact-container-title-text {
-    font-size: clamp(1rem, 3.5vw, 5.2rem);
+    font-size: clamp(1rem, 3vw, 5.2rem);
   }
   #form-container {
     top: 5%;

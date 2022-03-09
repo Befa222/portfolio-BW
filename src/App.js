@@ -64,7 +64,7 @@ function App() {
   }
   return (
     <ThemeProvider>
-      <div id="mobile-portrait">
+      <div>
         <div id="theme-container">
           <select
             id="language-container"
